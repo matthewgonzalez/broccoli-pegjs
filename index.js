@@ -27,6 +27,6 @@ PegFilter.prototype.extensions = ['pegjs'];
 PegFilter.prototype.targetExtension = 'js';
 
 PegFilter.prototype.processString = function (string) {
-  var parser = PEG.buildParser(string, this.options);
+  var parser = PEG.generate(string, this.options);
   return this.options.wrapper(string, parser);
 }
